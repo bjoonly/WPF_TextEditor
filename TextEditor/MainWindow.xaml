@@ -1,0 +1,112 @@
+﻿<Window x:Class="TextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+       
+        
+       
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar Band="1" BandIndex="1">
+                    <Button x:Name="boldButton" Click="BoldButton_Click">
+                        <TextBlock FontWeight="Bold" FontSize="16">Bold</TextBlock>
+                    </Button>
+                    <Button x:Name="italicButton" Click="italicButton_Click">
+                    <TextBlock FontStyle="Italic" FontSize="16"> Italic</TextBlock>
+                    </Button>
+                    <Button x:Name="underlineButton" Click="underlineButton_Click">
+                        <TextBlock TextDecorations="Underline" FontSize="16">Underline</TextBlock>
+                    </Button>
+                    <Button x:Name="clearButton" FontSize="16" Click="clearButton_Click">
+                        Clear
+                    </Button>
+                </ToolBar>
+                <ToolBar Band="1" BandIndex="2">
+                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" FontSize="16">Font Size:</TextBlock>
+                <ComboBox   x:Name="comboBoxSize" IsReadOnly="True" Margin="5,0,0,0" Width="40" FontSize="16" SelectionChanged="comboBoxSize_SelectionChanged">
+                    <ComboBoxItem >8</ComboBoxItem>
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>12</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">16</ComboBoxItem>
+                    <ComboBoxItem>18</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                    <ComboBoxItem>22</ComboBoxItem>
+                    <ComboBoxItem>24</ComboBoxItem>
+                    <ComboBoxItem>26</ComboBoxItem>
+                    <ComboBoxItem>28</ComboBoxItem>
+                    <ComboBoxItem>36</ComboBoxItem>
+                    <ComboBoxItem>48</ComboBoxItem>
+                    </ComboBox>
+                </ToolBar>
+                <ToolBar Band="1" BandIndex="3">
+                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" FontSize="16">Color:</TextBlock>
+                <ComboBox ToolBar.OverflowMode="AsNeeded" x:Name="comboBoxColor" IsReadOnly="True" Margin="5,0,0,0" Width="80" SelectionChanged="comboBoxColor_SelectionChanged" FontSize="16">
+                       
+                    <ComboBoxItem Tag="Red">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="Red" Height="10" Width="10"/>
+                            <TextBlock Margin="5,0,0,0" FontSize="16">Red</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Orange">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="Orange" Height="10" Width="10"/>
+                            <TextBlock Margin="5,0,0,0" FontSize="16">Orange</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Yellow">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="Yellow" Height="10" Width="10"/>
+                            <TextBlock Margin="5,0,0,0" FontSize="16">Yellow</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Green" >
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="Green" Height="10" Width="10"/>
+                            <TextBlock Margin="5,0,0,0" FontSize="16">Green</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Blue">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="Blue" Height="10" Width="10"/>
+                                <TextBlock Margin="5,0,0,0" FontSize="16">Blue</TextBlock>
+                            </StackPanel>
+                        </ComboBoxItem>
+                    
+                  
+                    <ComboBoxItem Tag="Purple">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="Purple" Height="10" Width="10"/>
+                                <TextBlock Margin="5,0,0,0" FontSize="16">Purple</TextBlock>
+                            </StackPanel>
+                        </ComboBoxItem>
+                    <ComboBoxItem Tag="Black" IsSelected="True">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="Black" Height="10" Width="10"/>
+                            <TextBlock Margin="5,0,0,0" FontSize="16">Black</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                </ComboBox>
+                </ToolBar>
+                <ToolBar Band="2">
+                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14">Start:</TextBlock>
+                    <TextBox x:Name="textBoxStart" Margin="5,0,0,0" Width="30" TextChanged="TextBoxStart_TextChanged" FontSize="14">0</TextBox>
+                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14">End:</TextBlock>
+                    <TextBox x:Name="textBoxEnd" Margin="5,0,0,0" Width="30" TextChanged="TextBoxEnd_TextChanged" FontSize="14">0</TextBox>
+                </ToolBar>
+            </ToolBarTray>
+            <RichTextBox x:Name="richTextBox" FontSize="16" Margin="10" >
+            <FlowDocument>
+                <Paragraph Name="paragraph">
+                    <Run>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Run>
+                </Paragraph>
+            </FlowDocument>
+            </RichTextBox>
+        </DockPanel>
+ 
+</Window>
